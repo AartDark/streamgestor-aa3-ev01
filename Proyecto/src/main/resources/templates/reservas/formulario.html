@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Formulario Reserva</title><link rel="stylesheet" th:href="@{/css/estilos.css}"></head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<main class="main">
+<section class="page-header-card">
+    <div><h1>Reserva</h1><p>Formulario de registro y actualización.</p></div>
+</section>
+<section class="card">
+<form th:action="@{/reservas/guardar}" th:object="${reserva}" method="post" class="form-grid">
+<input type="hidden" th:field="*{id}">
+<div class="form-group"><label>Cliente</label><select name="clienteId" required><option value="">Seleccione...</option><option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre}" th:selected="${reserva.cliente != null and reserva.cliente.id == cliente.id}"></option></select></div>
+<div class="form-group"><label>Película</label><select name="peliculaId" required><option value="">Seleccione...</option><option th:each="pelicula : ${peliculas}" th:value="${pelicula.id}" th:text="${pelicula.titulo}" th:selected="${reserva.pelicula != null and reserva.pelicula.id == pelicula.id}"></option></select><div class="error" th:if="${errorReserva}" th:text="${errorReserva}"></div></div>
+<div class="form-group"><label>Fecha de reserva</label><input type="date" th:field="*{fechaReserva}" required><div class="error" th:if="${#fields.hasErrors('fechaReserva')}" th:errors="*{fechaReserva}"></div></div>
+<div class="form-group"><label>Fecha de devolución</label><input type="date" th:field="*{fechaDevolucion}"></div>
+<div class="form-group"><label>Estado</label><select th:field="*{estado}"><option value="Activa">Activa</option><option value="Finalizada">Finalizada</option><option value="Cancelada">Cancelada</option></select></div>
+<div class="form-actions full-width">
+    <button class="btn" type="submit">Guardar</button>
+    <a class="btn secondary" th:href="@{/reservas}">Cancelar</a>
+</div>
+</form>
+</section>
+</main>
+</body>
+</html>

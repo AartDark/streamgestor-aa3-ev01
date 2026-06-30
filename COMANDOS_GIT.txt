@@ -1,0 +1,20 @@
+Comandos sugeridos para subir la evidencia a GitHub:
+
+1. Entrar a la carpeta del proyecto:
+cd Proyecto
+
+2. Inicializar Git:
+git init
+
+3. Agregar archivos:
+git add .
+
+4. Crear primer commit:
+git commit -m "Evidencia GA7 AA3 EV01 modulo web codificado"
+
+5. Conectar con GitHub:
+git remote add origin https://github.com/tuusuario/streamgestor-aa3-ev01.git
+
+6. Subir cambios:
+git branch -M main
+git push -u origin main

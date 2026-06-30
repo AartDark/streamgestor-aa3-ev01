@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Reservas</title><link rel="stylesheet" th:href="@{/css/estilos.css}"></head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<main class="main">
+<section class="page-header-card">
+    <div><h1>Reservas</h1><p>Registra, consulta, actualiza y elimina reservas realizadas por los clientes.</p></div>
+    <a class="btn" th:href="@{/reservas/nuevo}">Nueva reserva</a>
+</section>
+<section class="card">
+<div class="table-responsive">
+<table class="table">
+<thead><tr><th>ID</th><th>Cliente</th><th>Película</th><th>Fecha reserva</th><th>Fecha devolución</th><th>Estado</th><th>Acciones</th></tr></thead>
+<tbody>
+<tr th:each="reserva : ${reservas}">
+<td th:text="${reserva.id}"></td>
+<td th:text="${reserva.cliente.nombre}"></td>
+<td th:text="${reserva.pelicula.titulo}"></td>
+<td th:text="${reserva.fechaReserva}"></td>
+<td th:text="${reserva.fechaDevolucion}"></td>
+<td><span class="status-pill" th:text="${reserva.estado}"></span></td>
+<td class="actions"><a class="btn secondary btn-sm" th:href="@{/reservas/editar/{id}(id=${reserva.id})}">Editar</a><a class="btn danger btn-sm confirm-delete" th:href="@{/reservas/eliminar/{id}(id=${reserva.id})}">Eliminar</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

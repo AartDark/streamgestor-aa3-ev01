@@ -1,0 +1,31 @@
+<div th:fragment="menu">
+    <aside class="sidebar">
+        <a class="brand" th:href="@{/dashboard}">
+            <span class="brand-icon">▶</span>
+            <span>StreamGestor</span>
+        </a>
+
+        <nav class="sidebar-nav">
+            <a class="nav-link" data-path="/dashboard" th:href="@{/dashboard}">Inicio</a>
+            <a class="nav-link" data-path="/clientes" th:href="@{/clientes}">Clientes</a>
+            <a class="nav-link" data-path="/categorias" th:href="@{/categorias}">Categorías</a>
+            <a class="nav-link" data-path="/peliculas" th:href="@{/peliculas}">Películas</a>
+            <a class="nav-link" data-path="/reservas" th:href="@{/reservas}">Reservas</a>
+        </nav>
+
+        <div class="sidebar-info">
+            <strong>Evidencia GA7-AA3-EV01</strong>
+            <p>Módulo web codificado con CRUD y validaciones básicas.</p>
+        </div>
+
+        <a class="logout" th:href="@{/logout}">Salir</a>
+    </aside>
+
+    <header class="topbar">
+        <div>
+            <span>Sistema de gestión</span>
+            <strong>Panel administrativo</strong>
+        </div>
+        <div class="admin-pill">Administrador</div>
+    </header>
+</div>

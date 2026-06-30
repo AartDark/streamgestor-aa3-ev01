@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Categorías</title><link rel="stylesheet" th:href="@{/css/estilos.css}"></head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<main class="main">
+<section class="page-header-card">
+    <div><h1>Categorías</h1><p>Organiza el contenido por género o clasificación.</p></div>
+    <a class="btn" th:href="@{/categorias/nuevo}">Nueva categoría</a>
+</section>
+<section class="card">
+<div class="table-responsive">
+<table class="table">
+<thead><tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Acciones</th></tr></thead>
+<tbody>
+<tr th:each="categoria : ${categorias}">
+<td th:text="${categoria.id}"></td>
+<td th:text="${categoria.nombre}"></td>
+<td th:text="${categoria.descripcion}"></td>
+<td class="actions"><a class="btn secondary btn-sm" th:href="@{/categorias/editar/{id}(id=${categoria.id})}">Editar</a><a class="btn danger btn-sm confirm-delete" th:href="@{/categorias/eliminar/{id}(id=${categoria.id})}">Eliminar</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel principal</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<main class="main">
+    <section class="hero">
+        <span>Dashboard principal</span>
+        <h1>Administra clientes, películas, categorías y reservas en un solo lugar.</h1>
+        <p>Sistema web para controlar el catálogo, registrar clientes y gestionar reservas de contenido.</p>
+        <div class="actions">
+            <a class="btn" th:href="@{/peliculas}">Ver películas</a>
+            <a class="btn secondary" th:href="@{/reservas}">Gestionar reservas</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">Clientes <strong th:text="${totalClientes}">0</strong></div>
+        <div class="stat">Categorías <strong th:text="${totalCategorias}">0</strong></div>
+        <div class="stat">Películas <strong th:text="${totalPeliculas}">0</strong></div>
+        <div class="stat">Reservas <strong th:text="${totalReservas}">0</strong></div>
+    </section>
+
+    <section class="cards-grid">
+        <article class="card">
+            <h2>Resumen del módulo</h2>
+            <p>El sistema permite realizar operaciones de inserción, consulta, actualización y eliminación sobre los módulos principales del proyecto.</p>
+            <p>La estructura fue desarrollada con Spring Boot, Thymeleaf y base de datos H2 para facilitar la ejecución local.</p>
+        </article>
+
+        <article class="card">
+            <h2>Módulos del sistema</h2>
+            <div class="quick">
+                <a th:href="@{/clientes}">Clientes</a>
+                <a th:href="@{/categorias}">Categorías</a>
+                <a th:href="@{/peliculas}">Películas</a>
+                <a th:href="@{/reservas}">Reservas</a>
+            </div>
+        </article>
+    </section>
+</main>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

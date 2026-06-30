@@ -1,0 +1,33 @@
+EVIDENCIA: GA7-220501096-AA3-EV01
+NOMBRE DEL MÓDULO: StreamGestor - Módulo web de gestión de streaming
+TIPO DE PROYECTO: Web
+FRAMEWORK APLICADO: Spring Boot con Thymeleaf y JPA
+
+OBJETIVO DEL MÓDULO
+Codificar un módulo web funcional que permita gestionar clientes, categorías, películas y reservas de una plataforma de streaming, aplicando estándares de codificación, comentarios en el código y control de versiones con Git.
+
+FUNCIONALIDADES IMPLEMENTADAS
+1. Inicio de sesión de usuario administrador.
+2. Panel principal con conteo de clientes, categorías, películas y reservas.
+3. CRUD de clientes: registrar, consultar, actualizar y eliminar.
+4. CRUD de categorías: registrar, consultar, actualizar y eliminar.
+5. CRUD de películas: registrar, consultar, actualizar y eliminar.
+6. CRUD de reservas: registrar, consultar, actualizar y eliminar.
+7. Validaciones básicas en formularios.
+8. Script de base de datos incluido.
+9. Archivo README con instrucciones de ejecución.
+
+ESTÁNDARES DE CODIFICACIÓN APLICADOS
+- Paquetes en minúscula: com.sena.streamgestor.controller, model, repository y service.
+- Clases en PascalCase: ClienteController, PeliculaRepository, DashboardService.
+- Métodos y variables en camelCase: guardar, listar, fechaReserva, clienteRepository.
+- Comentarios en clases principales para explicar la responsabilidad de cada componente.
+- Separación por capas: controlador, modelo, repositorio, servicio, vistas y recursos estáticos.
+
+USUARIO DE PRUEBA
+Correo: admin@streaminggestor.com
+Contraseña: admin123
+
+EJECUCIÓN
+Abrir la carpeta Proyecto en NetBeans o en otro IDE compatible con Maven y ejecutar la clase StreamGestorApplication.java.
+Luego ingresar desde el navegador a: http://localhost:8080
